@@ -6,15 +6,15 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div style={{ backgroundImage: `url(${footer_bg})` }} className="h-96 bg-no-repeat bg-cover">
+        <div style={{ backgroundImage: `url(${footer_bg})` }} className="lg:h-96 md:h-[550px] bg-no-repeat bg-cover">
             <div className="bg-black h-full bg-opacity-70">
-                <div className="w-11/12 mx-auto pt-20 pb-10 grid grid-cols-4 gap-5 border-b border-gray-400 ">
+                <div className="w-11/12 mx-auto pt-20 pb-10 grid lg:grid-cols-4 gap-5 md:grid-cols-2 grid-cols-1 border-b border-gray-400 ">
                     <div className=" pt-0 mt-0">
                         <img src={logo} className="h-20 rounded" />
                         <h2 className="text-3xl font-thin text-gray-200">Shaping Future</h2>
                     </div>
-                    <div className="flex flex-col items-center pt-0 mt-0 ">
-                        <ul className="flex gap-3 flex-col text-gray-200">
+                    <div className="flex flex-col lg:items-center items-start pt-0 mt-0 ">
+                        <ul className="flex md:gap-3 gap-2 flex-col text-gray-200">
                             <li><NavLink to="/">Home</NavLink></li>
                             <li><NavLink to="/about">About Us</NavLink></li>
                             <li><NavLink to="/projects">Projects</NavLink></li>

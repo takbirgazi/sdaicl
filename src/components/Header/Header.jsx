@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <div className="bg-base-100 border-b">
             <div className="flex justify-between items-center w-11/12 mx-auto">
-                <div className="navbar-start w-full lg:w-4/12 flex">
+                <div className="navbar-start w-full lg:w-4/12 flex py-1">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg

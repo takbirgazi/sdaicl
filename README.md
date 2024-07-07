@@ -9,3 +9,4 @@
 
 * react-helmet-async
 * react-icons
+* prop-types
