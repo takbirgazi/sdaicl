@@ -1,17 +1,18 @@
 import { NavLink } from "react-router-dom";
 import logo from "/logo.jpg";
+import "./Header.css"
 
 
 const Header = () => {
     const links = <>
-        <li><NavLink to="/">HOME</NavLink></li>
-        <li><NavLink to="/about">ABOUT US</NavLink></li>
-        <li><NavLink to="/ourTeam">OUR TEAM</NavLink></li>
-        <li><NavLink to="/sectors">SECTORS</NavLink></li>
-        <li><NavLink to="/projects">PROJECTS</NavLink></li>
-        <li><NavLink to="/globalReach">GLOBAL REACH</NavLink></li>
-        <li><NavLink to="/careers">CAREERS</NavLink></li>
-        <li><NavLink to="/contact">CONTACT</NavLink></li>
+        <li className="headerList font-semibold text-gray-200"><NavLink to="/">HOME</NavLink></li>
+        <li className="headerList font-semibold text-gray-200"><NavLink to="/about">ABOUT US</NavLink></li>
+        <li className="headerList font-semibold text-gray-200"><NavLink to="/ourTeam">OUR TEAM</NavLink></li>
+        <li className="headerList font-semibold text-gray-200"><NavLink to="/sectors">SECTORS</NavLink></li>
+        <li className="headerList font-semibold text-gray-200"><NavLink to="/projects">PROJECTS</NavLink></li>
+        <li className="headerList font-semibold text-gray-200"><NavLink to="/globalReach">GLOBAL REACH</NavLink></li>
+        <li className="headerList font-semibold text-gray-200"><NavLink to="/careers">CAREERS</NavLink></li>
+        <li className="headerList font-semibold text-gray-200"><NavLink to="/contact">CONTACT</NavLink></li>
     </>
 
     return (

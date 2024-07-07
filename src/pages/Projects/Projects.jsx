@@ -17,7 +17,7 @@ const Projects = () => {
     return (
         <div>
             <Helmet>
-                <title>Our Team | SDAICL</title>
+                <title>Projects | SDAICL</title>
             </Helmet>
             <PageTittle pageTittle="Sustainable Development Alternatives"></PageTittle>
             <div className="py-10 bg-gray-200">
