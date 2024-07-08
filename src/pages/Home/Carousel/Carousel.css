@@ -1,0 +1,23 @@
+.slick-next {
+    right: 50px;
+    z-index: 1;
+    border: 1px solid #cfd0c6;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: #ffffff40;
+}
+
+.slick-prev {
+    left: 25px;
+    z-index: 1;
+    border: 1px solid #cfd0c6;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: #ffffff40;
+}
+
+.slick-dots {
+    bottom: 25px;
+}
