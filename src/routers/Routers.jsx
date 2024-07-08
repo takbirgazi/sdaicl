@@ -9,11 +9,13 @@ import Projects from './../pages/Projects/Projects';
 import Global from './../pages/Global/Global';
 import Careers from './../pages/Careers/Careers';
 import Contact from './../pages/Contact/Contact';
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
