@@ -12,5 +12,6 @@
 * prop-types
 * @material-tailwind/react
 * slick-carousel 
+* google-map-react
 
 

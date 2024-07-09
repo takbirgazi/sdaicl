@@ -4,9 +4,19 @@ import PageTittle from "../../components/PageTittle/PageTittle";
 import { FaRegMap } from "react-icons/fa6";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
+import GoogleMapReact from 'google-map-react';
+import ContactForm from "./ContactForm";
+
 
 
 const Contact = () => {
+    const defaultProps = {
+        center: {
+            lat: 23.7488412,
+            lng: 90.3753132
+        },
+        zoom: 15
+    };
     return (
         <div>
             <Helmet>
@@ -38,11 +48,18 @@ const Contact = () => {
                         </div>
                     </div>
                     <div className="flex gap-5 md:flex-row flex-col">
-                        <div className="md:w-1/2 w-full border border-gray-400">
-                            Content...
+                        <div className="md:w-1/2 h-96 w-full border border-gray-400">
+                            <div style={{ height: '100%', width: '100%' }}>
+                                <GoogleMapReact
+                                    bootstrapURLKeys={{ key: "" }}
+                                    defaultCenter={defaultProps.center}
+                                    defaultZoom={defaultProps.zoom}
+                                >
+                                </GoogleMapReact>
+                            </div>
                         </div>
                         <div className="md:w-1/2 w-full bg-gray-100 border-gray-300 shadow-sm p-4">
-                            Content...
+                           <ContactForm></ContactForm>
                         </div>
                     </div>
                 </div>
