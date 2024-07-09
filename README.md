@@ -11,6 +11,6 @@
 * react-icons
 * prop-types
 * @material-tailwind/react
-* slick-carousel --save
+* slick-carousel 
 
 

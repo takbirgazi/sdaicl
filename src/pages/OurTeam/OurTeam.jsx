@@ -70,8 +70,6 @@ const OurTeam = () => {
             deg: `Head of HR & Admin`,
             desc: `Mr. Khandakar Raihan Sayeed has over 20  years of experience managing different corporates' HR and admin, from telecommunication to painting industry. He worked in Robi-Axiata for around 15 years and served as head of HR & Admin of Asian Paints  Limited. Mr. Sayeed was awarded and recognized as Robi  Champion 2018 for his outstanding contribution. He has completed a Master’s in Management from  Bangladesh.`
         },
-
-
     ]
     return (
         <div>

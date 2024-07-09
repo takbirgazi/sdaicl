@@ -10,6 +10,7 @@ import Global from './../pages/Global/Global';
 import Careers from './../pages/Careers/Careers';
 import Contact from './../pages/Contact/Contact';
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import TeamModal from "../pages/OurTeam/TeamModal";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: "/ourTeam",
                 element: <OurTeam></OurTeam>
+            },
+            {
+                path: "/ourTeam/:id",
+                element: <TeamModal></TeamModal>
             },
             {
                 path: "/sectors",
