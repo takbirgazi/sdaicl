@@ -20,7 +20,7 @@ const TeamModal = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('../../../public/team.json')
+        fetch('https://sdaicl.com/team.json')
             .then(res => res.json())
             .then(data => setFullTeam(data));
         setTimeout(() => {

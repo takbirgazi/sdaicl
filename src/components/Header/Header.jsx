@@ -16,7 +16,7 @@ const Header = () => {
     </>
 
     return (
-        <div className="bg-base-100 border-b">
+        <div className="bg-base-100 border-b py-4">
             <div className="flex justify-between items-center w-11/12 mx-auto">
                 <div className="navbar-start w-full lg:w-4/12 flex py-1">
                     <div className="dropdown">
@@ -41,7 +41,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <div>
-                        <img src={logo} className="h-12 rounded" />
+                        <img src={logo} className="h-12" />
                     </div>
                 </div>
                 <div className="navbar-end hidden lg:flex w-full lg:w-8/12">

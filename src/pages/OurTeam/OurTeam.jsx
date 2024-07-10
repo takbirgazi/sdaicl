@@ -10,7 +10,7 @@ const OurTeam = () => {
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         setIsLoading(true);
-        fetch('../../../public/team.json')
+        fetch('https://sdaicl.com/team.json')
             .then(res => res.json())
             .then(data => setTeamMembers(data));
         setTimeout(() => {
