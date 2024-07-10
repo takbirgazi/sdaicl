@@ -13,5 +13,6 @@
 * @material-tailwind/react
 * slick-carousel 
 * google-map-react
+* react-awesome-reveal
 
 
