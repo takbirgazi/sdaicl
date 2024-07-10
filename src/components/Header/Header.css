@@ -3,10 +3,38 @@
     text-decoration: underline solid 2px #dfad12 ;
     background-color: transparent !important;
 }
-li a{
-    transition: all 1s !important;
-}
 li a:hover{
     background-color: transparent !important;
-    text-decoration: underline solid 2px #dfad12 !important;
+    text-decoration: underline solid 2px #dfad12 ;
 }
+
+
+/*
+
+.headerList .active {
+    color: #dfad12 !important;
+    background-color: transparent !important;
+}
+li a {
+    position: relative;
+    text-decoration: none; 
+    transition: border-bottom 0.3s ease; 
+     background-color: transparent !important;
+}
+
+li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 0%;
+    height: 2px; 
+    background-color: #dfad12; 
+    transition: width 0.3s ease; 
+}
+
+li a:hover::after {
+    width: 100%; 
+}
+
+*/
