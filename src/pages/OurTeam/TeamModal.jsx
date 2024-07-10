@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import PageTittle from '../../components/PageTittle/PageTittle';
 import SubTittle from '../../components/SubTittle/SubTittle';
 import { Fade } from 'react-awesome-reveal';
+import { ColorRing } from 'react-loader-spinner';
 // import jsonData from "../../../public/team.json";
 
 const TeamModal = () => {
@@ -33,7 +34,15 @@ const TeamModal = () => {
             </Helmet>
 
             {
-                isLoading ? <div className='bg-gray-200 py-10 min-h-screen w-full flex items-center justify-center'>Loading...</div> : <div>
+                isLoading ? <div className='bg-gray-200 py-10 min-h-screen w-full flex items-center justify-center'><ColorRing
+                    visible={true}
+                    height="80"
+                    width="80"
+                    ariaLabel="color-ring-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="color-ring-wrapper"
+                    colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                /></div> : <div>
                     <PageTittle pageTittle="Sustainable Development Alternatives"></PageTittle>
                     <div className='bg-gray-200 py-10'>
                         <div className='w-11/12 mx-auto'>

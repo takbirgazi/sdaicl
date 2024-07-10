@@ -14,5 +14,6 @@
 * slick-carousel 
 * google-map-react
 * react-awesome-reveal
+* react-loader-spinner
 
 
