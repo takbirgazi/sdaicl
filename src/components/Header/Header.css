@@ -3,7 +3,10 @@
     text-decoration: underline solid 2px #dfad12 ;
     background-color: transparent !important;
 }
+li a{
+    transition: all 1s !important;
+}
 li a:hover{
     background-color: transparent !important;
-    text-decoration: underline solid 2px #dfad12 ;
+    text-decoration: underline solid 2px #dfad12 !important;
 }

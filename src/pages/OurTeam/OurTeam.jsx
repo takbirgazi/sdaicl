@@ -2,91 +2,50 @@ import { Helmet } from "react-helmet-async";
 import PageTittle from "../../components/PageTittle/PageTittle";
 import SubTittle from './../../components/SubTittle/SubTittle';
 import TeamCard from "./TeamCard";
-
-import asad from "../../assets/images/team/asad.jpg"
-import ferdous from "../../assets/images/team/ferdous.jpg"
-import masum from "../../assets/images/team/masum.jpg"
-import meherin from "../../assets/images/team/meherin.jpg"
-import munzurul from "../../assets/images/team/munzurul.jpg"
-import raihan from "../../assets/images/team/raihan.jpg"
-import shiva from "../../assets/images/team/shiva.jpg"
-import tapos from "../../assets/images/team/tapos.jpg"
+import { useEffect, useState } from "react";
+import { ColorRing } from "react-loader-spinner";
 
 const OurTeam = () => {
-    const teamMembers = [
-        {
-            id: 1,
-            name: "Dr. M. Manzurul Hassan",
-            imageUrl: munzurul,
-            deg: "Founder & Principal Adviser, Environment and Climate Change",
-            desc: `Professor M. Manzurul Hassan (PhD) has been in the university teaching and research for more than three decades. Professor Hassan graduated with his PhD in Social Sciences and Health from Durham University, UK with Commonwealth Scholarships Programme. He was a Commonwealth Fellow as well as a Fellow of the Royal Geographical Society (with the Institute of British Geographers, IBG). Professor Hassan’s research delves in environment, mainly on groundwater arsenic poisoning, air quality monitoring, medical waste management, environmental health risk, and environmental justice. He is also experienced with environmental investigation, in terms of IEE, ESIA, and EMP. He is concerned with the pattern of climate change and human health as well as climatic mitigation and adaptation strategy. Professor Hassan wrote a significant number of research papers and book chapters. He is pioneer in Bangladesh for Public Participation GIS (PPGIS). He is the author of a book on “Arsenic in Groundwater: Poisoning and Risk Assessment” published from the CRC Press, USA in 2018. He is a member of Editorial Board of several peer-reviewed International Journals. Apart from his teaching and research, Professor Hassan is involved in development activities with several institutes and organizations. He has also served as consultant to a number of world bodies, including ADB, World Bank, UNICEF, UNDP, and WHO. Professor Hassan also wrote some 50 development reports. He contributed to formulate policies/strategies in different development sectors (e.g., climate change and human health, medical waste management, water supply and sanitation) for different countries, e.g., Bangladesh, India, Nepal, Bhutan, Sri Lanka, Maldives, and Indonesia.`
-        },
-        {
-            id: 2,
-            name: "Asad Hossain",
-            imageUrl: asad,
-            deg: "Chief Executive Officer",
-            desc: `Mr. Asad Hossain is a development practitioner with over 17 years of experience in the areas of project management, business development, capacity development, and contract management. He worked under direct contract with different multilateral development organizations including the World Bank and the Asian Development Bank. Mr. Hossain supported the designing and implementation of major donor-funded projects in Bangladesh. He also supported different agencies to develop their capacity for project implementation. Mr. Hossain has decades of experience working with different consulting firms. He led proposal development for different bids and prepared approaches, methodology, and work plans for several projects. He also managed several contracts with consulting firms in different countries in Asia. He has worked in Bangladesh and Indonesia as residence-based and in most countries in South, Southeast, and Central Asia as desk-based, including several short visits to many of these countries. Mr. Hossain also worked in a USA-based training institute and visited the USA to manage training. Mr. Hossain completed a Master’s degree in Economics and is continuing a Master’s degree in Education in Bangladesh.`
-        },
-        {
-            id: 3,
-            name: `Dr. Shiva Raj Lohani`,
-            imageUrl: shiva,
-            deg: `Principal Adviser, Education and Skill Development`,
-            desc: `Dr. Shiva Raj Lohani is a veteran international consultant in the area of education and skill development. He has an enormous experience in the development sector. He worked as Education Economist, Implementation Specialist, HRD Specialist, and Evaluation Specialist in more than 15 countries in Asia including Bangladesh. Dr Lohani was directly contracted by the World Bank and the Asian Development Bank several times to provide support to the task teams during their missions in the project countries. In addition, Dr Lohani worked in projects funded by DfID, SDC, EC, UNESCO, UNICEF, Action Aid, and different governments. He also served as Team Leader in several projects in different countries. Dr Lohani completed his PhD in Economics from the Victorian University of Manchester, UK in 1987.`
-        },
-        {
-            id: 4,
-            name: `Dr. Ferdows Zahid`,
-            imageUrl: ferdous,
-            deg: `Principal Adviser, Engineering & Technology`,
-            desc: `Dr. Ferdows Zahid has over 18 years of teaching and research experience in USA, Canada, Hong Kong, and Bangladesh.  Dr. Zahid has been teaching at the Independent University of Bangladesh (IUB) since 2015. He worked as a Research Assistant Professor at the University of Hong Kong (HKU) for 4 years. He was also a Postdoctoral fellow at McGill University, Canada, and UC Riverside, USA. Dr. Zahid’s expertise is in the fields of Nanoelectronics, Thermoelectrics, and the first principles-based modeling of Solid-state electronic devices and materials. He published several highly cited and widely read important research articles. Dr. Zahid published 28 Peer Reviewed Journal Papers, 6 Conference Proceedings and 2 Book chapters. His Research Interest Score at ResearchGate is in the 93rd percentile. Dr. Zahid completed his MS and Ph.D. in Electrical Engineering from Purdue University, USA in 2005.`
-        },
-        {
-            id: 5,
-            name: `Tapos Kumar Das`,
-            imageUrl: tapos,
-            deg: `Legal Adviser`,
-            desc: `Tapos Kumar Das is an Associate Professor of Law and Justice at Jahangirnagar University, Bangladesh. In 2020, he completed Advanced LLM in Public International Law from Leiden University, the Netherlands with specialization in Peace, Justice, and Development. Earlier, he achieved LLB from the University of London, UK, and LLB (Honours) and LLM from the University of Rajshahi, Bangladesh. He received few academic awards including Prime Minister Gold Medal, Agrani Bank Gold Medal, and Rajshahi University Prize. In early career, he was a practicing lawyer and holds the permission to practice in the High Court Division of Bangladesh Supreme Court. His teaching and research include international crimes and global justice, international humanitarian law, the law of criminal procedure, and transitional justice in Bangladesh. In addition to a significant number of scientific journal articles, he authored a book titled “The Obligation to Investigate and Prosecute Past Atrocity: Examining States’ Response to the 1971 Bangladesh Genocide”.`
-        },
-        {
-            id: 6,
-            name: `Maherin Ahmed`,
-            imageUrl: meherin,
-            deg: `Communication and Partnerships Adviser`,
-            desc: `Ms. Maherin Ahmed is a specialist in strategic communication, feature writing, program planning and media management. Ms. Ahmed worked in leading roles in several NGOs and UN organizations including Oxfam, Plan International, World Food Programme, WorldFish, UNICEF, and the International Federation of Red Cross and Red Crescent Societies. Ms. Ahmed was a news presenter in a popular television channel in Bangladesh and worked as a school teacher in Bangladesh in her early career. Ms. Ahmed completed a Bachelor’s degree in Economics from Whitman College, USA in 2011.`
-        },
-        {
-            id: 7,
-            name: `Mohammad Masum Billah`,
-            imageUrl: masum,
-            deg: `Head of Finance and Accounting`,
-            desc: `Mr. Mohammad Masum Billah is a skilled finance person with two decades of experience on financial control, planning, management, accounting, reporting, Internal audit and Internal control. He is also proficient in company secretarial matters, corporate affairs, Investors relationship and Insurance management. He is highly motivated dynamic leader who drives and performing as senior manager position. He has the experience in telecommunication and ISP sector a deep understanding of finance, technology and customer behavior. He has a proven track record to completion of different projects, process & policy development, simplification & automation and cross-functional change programs successfully. He is an MBA with major in Finance and Master in Accounting. He is also qualified chartered secretary and associate member of ICSB. He has been an affiliated member of International Relations Sub-Committee of ICSB. He was also a member of CPD Sub-Committee and corporate governance excellence technical committee of ICSB and performed an active role for professional development. He was also a faculty in ICSB.`
-        },
-        {
-            id: 8,
-            name: `Khandakar Raihan Sayeed`,
-            imageUrl: raihan,
-            deg: `Head of HR & Admin`,
-            desc: `Mr. Khandakar Raihan Sayeed has over 20  years of experience managing different corporates' HR and admin, from telecommunication to painting industry. He worked in Robi-Axiata for around 15 years and served as head of HR & Admin of Asian Paints  Limited. Mr. Sayeed was awarded and recognized as Robi  Champion 2018 for his outstanding contribution. He has completed a Master’s in Management from  Bangladesh.`
-        },
-    ]
+    const [teamMembers, setTeamMembers] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
+    useEffect(() => {
+        setIsLoading(true);
+        fetch('../../../public/team.json')
+            .then(res => res.json())
+            .then(data => setTeamMembers(data));
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 400);
+    }, [])
+
     return (
         <div>
             <Helmet>
                 <title>Our Team | SDAICL</title>
             </Helmet>
             <PageTittle pageTittle="Sustainable Development Alternatives"></PageTittle>
-            <div className="py-10 bg-gray-200">
-                <div className="w-11/12 mx-auto">
-                    <SubTittle subTittleText="Our Team"></SubTittle>
-                    <div className="py-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
-                        {
-                            teamMembers.map(info => (<TeamCard key={info.id} teamInfo={info}></TeamCard>))
-                        }
+            {
+                isLoading ? <div className='bg-gray-200 py-10 min-h-screen w-full flex items-center justify-center'><ColorRing
+                    visible={true}
+                    height="80"
+                    width="80"
+                    ariaLabel="color-ring-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="color-ring-wrapper"
+                    colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                /></div> : <div>
+                    <div className="py-10 bg-gray-200">
+                        <div className="w-11/12 mx-auto">
+                            <SubTittle subTittleText="Our Team"></SubTittle>
+                            <div className="py-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+                                {
+                                    teamMembers.map(info => (<TeamCard key={info.id} teamInfo={info}></TeamCard>))
+                                }
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
     );
 };

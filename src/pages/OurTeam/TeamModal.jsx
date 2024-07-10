@@ -23,16 +23,17 @@ const TeamModal = () => {
         fetch('../../../public/team.json')
             .then(res => res.json())
             .then(data => setFullTeam(data));
-        setIsLoading(false);
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 400);
     }, [])
-
 
     return (
         <div>
             <Helmet>
                 <title>Our Team | SDAICL</title>
             </Helmet>
-
+            <PageTittle pageTittle="Sustainable Development Alternatives"></PageTittle>
             {
                 isLoading ? <div className='bg-gray-200 py-10 min-h-screen w-full flex items-center justify-center'><ColorRing
                     visible={true}
@@ -43,7 +44,6 @@ const TeamModal = () => {
                     wrapperClass="color-ring-wrapper"
                     colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
                 /></div> : <div>
-                    <PageTittle pageTittle="Sustainable Development Alternatives"></PageTittle>
                     <div className='bg-gray-200 py-10'>
                         <div className='w-11/12 mx-auto'>
                             <SubTittle subTittleText="Our Team"></SubTittle>
