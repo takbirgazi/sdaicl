@@ -41,7 +41,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <div>
-                        <img src={logo} className="h-12" />
+                        <a href="https://sdaicl.com/"><img src={logo} className="h-12" /></a>
                     </div>
                 </div>
                 <div className="navbar-end hidden lg:flex w-full lg:w-8/12">
