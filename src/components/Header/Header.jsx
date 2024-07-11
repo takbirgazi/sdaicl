@@ -1,9 +1,12 @@
 import { NavLink } from "react-router-dom";
 import logo from "/logo.jpg";
 import "./Header.css"
+import { useState } from "react";
 
 
 const Header = () => {
+    const [dropDown, setDropDown] = useState(false);
+
     const links = <>
         <li className="headerList font-semibold text-lg text-gray-200"><NavLink to="/">HOME</NavLink></li>
         <li className="headerList font-semibold text-lg text-gray-200"><NavLink to="/about">ABOUT US</NavLink></li>
@@ -15,15 +18,27 @@ const Header = () => {
         <li className="headerList font-semibold text-lg text-gray-200"><NavLink to="/contact">CONTACT</NavLink></li>
     </>
 
+    document.addEventListener("click", (event) => {
+        const buttonId = event.target.id;
+        if (buttonId != "barIcon") {
+            setDropDown(false);
+        }
+    })
+
+    const handleDropDown = () => {
+        setDropDown(!dropDown);
+    }
+
     return (
         <div className="bg-base-100 border-b py-4">
             <div className="flex justify-between items-center w-11/12 mx-auto">
                 <div className="navbar-start w-full lg:w-4/12 flex py-1">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div className="dropdown relative">
+                        <div onClick={handleDropDown} id="barIcon" role="button" className="btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
+                                id="barIcon"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -35,8 +50,7 @@ const Header = () => {
                             </svg>
                         </div>
                         <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[4] mt-3 w-52 p-2 shadow">
+                            className={`menu menu-sm absolute lg:hidden ${dropDown || 'hidden'} bg-base-100 rounded-box z-[4] mt-3 w-52 p-2 shadow`}>
                             {links}
                         </ul>
                     </div>
