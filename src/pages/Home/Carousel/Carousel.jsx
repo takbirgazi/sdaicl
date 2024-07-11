@@ -26,7 +26,7 @@ export default function SimpleSlider() {
                         <source src={sliderVideo1} type="video/mp4" />
                         Your browser does not support the video. Please Update Your Browser!
                     </video>
-                    <div className="absolute md:bottom-16 bottom-5 md:p-4 px-1 pt-10 bg-opacity-40 w-full">
+                    <div className="absolute md:bottom-16 bottom-5 md:p-4 px-1 bg-opacity-40 w-full">
                         <div className="w-11/12 mx-auto px-4 py-2 bg-opacity-40 rounded">
                             <h2 className="md:text-6xl text-3xl font-bold text-gray-200">3E</h2>
                             <p className="text-gray-200 font-medium  md:text-lg text-sm">Our pinpoint is 3E because we focus on Environment <br /> Education and  Engineering.</p>
@@ -38,7 +38,7 @@ export default function SimpleSlider() {
                         <source src={sliderVideo2} type="video/mp4" />
                         Your browser does not support the video. Please Update Your Browser!
                     </video>
-                    <div className="absolute md:bottom-16 bottom-5 md:p-4 px-1 pt-10 bg-opacity-40 w-full">
+                    <div className="absolute md:bottom-16 bottom-5 md:p-4 px-1 bg-opacity-40 w-full">
                         <div className="w-11/12 mx-auto px-4 py-2 bg-opacity-40 rounded">
                             <h2 className="md:text-6xl text-3xl font-bold text-gray-200">3E</h2>
                             <p className="text-gray-200 font-medium  md:text-lg text-sm">Our pinpoint is 3E because we focus on Environment <br /> Education and  Engineering.</p>
@@ -50,7 +50,7 @@ export default function SimpleSlider() {
                         <source src={sliderVideo3} type="video/mp4" />
                         Your browser does not support the video. Please Update Your Browser!
                     </video>
-                    <div className="absolute md:bottom-16 bottom-5 md:p-4 px-1 pt-10 bg-opacity-40 w-full">
+                    <div className="absolute md:bottom-16 bottom-5 md:p-4 px-1 bg-opacity-40 w-full">
                         <div className="w-11/12 mx-auto px-4 py-2 bg-opacity-40 rounded">
                             <h2 className="md:text-6xl text-3xl font-bold text-gray-200">3E</h2>
                             <p className="text-gray-200 font-medium  md:text-lg text-sm">Our pinpoint is 3E because we focus on Environment <br /> Education and  Engineering.</p>
