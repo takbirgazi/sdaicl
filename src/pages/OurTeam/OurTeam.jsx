@@ -5,18 +5,21 @@ import TeamCard from "./TeamCard";
 import { useEffect, useState } from "react";
 import { ColorRing } from "react-loader-spinner";
 
+
 const OurTeam = () => {
     const [teamMembers, setTeamMembers] = useState([]);
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
+    const fullLocation = window.location.origin
+    
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://sdaicl.com/team.json')
+        fetch(fullLocation.includes("www") ? "https://www.sdaicl.com/team.json" : "https://sdaicl.com/team.json")
             .then(res => res.json())
             .then(data => setTeamMembers(data));
         setTimeout(() => {
             setIsLoading(false)
         }, 400);
-    }, [])
+    }, [fullLocation])
 
     return (
         <div>

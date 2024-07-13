@@ -7,26 +7,24 @@ import PageTittle from '../../components/PageTittle/PageTittle';
 import SubTittle from '../../components/SubTittle/SubTittle';
 import { Fade } from 'react-awesome-reveal';
 import { ColorRing } from 'react-loader-spinner';
-// import jsonData from "../../../public/team.json";
 
 const TeamModal = () => {
     const navigate = useNavigate();
     const params = useParams();
     const [fullTeam, setFullTeam] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
-
-    console.log(params.id);
+    const fullLocation = window.location.origin
     const currentId = parseInt(params.id) - 1;
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://sdaicl.com/team.json')
+        fetch(fullLocation.includes("www") ? "https://www.sdaicl.com/team.json" : "https://sdaicl.com/team.json")
             .then(res => res.json())
             .then(data => setFullTeam(data));
         setTimeout(() => {
             setIsLoading(false)
         }, 400);
-    }, [])
+    }, [fullLocation])
 
     return (
         <div>
